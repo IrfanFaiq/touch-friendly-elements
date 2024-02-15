@@ -29,13 +29,54 @@
         <style>
            .switch{position:relative; display:inline-block; width:60px; height:34px; outline:0px;}
            .switch input{opacity:0; width:0; height:0;}
-           .tSlider{position:absolute; cursor:pointer; top:0; left:0; right:0; bottom:0; background-color:#ccc; -webkit-transition: .4s; transition: .4s; width: 60px;}
-           .tSlider:before{position:absolute; content: ""; height:26px; width:26px; left:4px; bottom:4px; background-color:white; -webkit-transition:.4s; transition:.4s;}
-           input:checked+.tSlider{background-color:#2196F3;}
-           input:focus+.tSlider{box-shadow: 0 0 1px #2196F3;}
-           input:checked+.tSlider:before{-webkit-transform:translateX(26px); -ms-transform: translateX(26px); transform: translateX(26px);}
-           .tSlider.round{border-radius:34px;}
-           .tSlider.round:before{border-radius:50%;}
+           
+            .tSlider{
+                position:absolute;
+                cursor:pointer;
+                top:0;
+                left:0;
+                right:0;
+                bottom:0;
+                background-color:#ccc;
+                -webkit-transition: .4s;
+                transition: .4s;
+                width: 60px;
+            }
+
+            .tSlider:before{
+                position:absolute;
+                content: "";
+                height:30px;
+                width:30px;
+                left:2px;
+                bottom:2px;
+                background-color:white;
+                -webkit-transition:.4s;
+                transition:.4s;
+                box-shadow: -2px 2px 5px rgba(0, 0, 0, 0.2);
+            }
+
+            input:checked+.tSlider{
+                background-color:#2196F3;
+            }
+
+            input:focus+.tSlider{
+                box-shadow: 0 0 1px #2196F3;
+            }
+
+            input:checked+.tSlider:before{
+                -webkit-transform:translateX(26px);
+                -ms-transform: translateX(26px);
+                transform: translateX(26px);
+            }
+
+            .tSlider.round{
+                border-radius:34px;
+            }
+
+            .tSlider.round:before{
+                border-radius:50%;
+            }
         </style>
     </#if>
 </div>
