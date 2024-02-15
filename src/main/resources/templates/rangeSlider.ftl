@@ -21,22 +21,9 @@
                 var output_${elementParamName!} = document.getElementById("${elementParamName!}_value");
                 output_${elementParamName!}.innerHTML = slider_${elementParamName!}.value;
 
-                function updateSlider() {
-                    output_${elementParamName!}.innerHTML = slider_${elementParamName!}.value;
-                    slider_${elementParamName!}.classList.add('active');
+                slider_${elementParamName!}.oninput = function() {
+                output_${elementParamName!}.innerHTML = this.value;
                 }
-
-                function resetSlider() {
-                    slider_${elementParamName!}.classList.remove('active');
-                }
-
-                slider_${elementParamName!}.addEventListener('input', updateSlider);
-
-                slider_${elementParamName!}.addEventListener('mousedown', updateSlider);
-                slider_${elementParamName!}.addEventListener('mouseup', resetSlider);
-
-                slider_${elementParamName!}.addEventListener('touchstart', updateSlider);
-                slider_${elementParamName!}.addEventListener('touchend', resetSlider);
             }
         });
     </script>
@@ -54,11 +41,11 @@
 
             .rangeSlider {
                 -webkit-appearance: none;
-                width: 100% !important;
-                height: 5px !important;
-                border-radius: 5px;
-                background: #a1a1a1;
-                background-image: linear-gradient(to right, #e0e0e0 , #d1cfcf);
+                width: 100%;
+                height: 7px;
+                border-radius: 5px;  
+                background: #d3d3d3;
+                background-image: linear-gradient(to right, #e4e4e4 , #c5c5c5);
                 outline: none;
                 opacity: 0.7;
                 -webkit-transition: .2s;
@@ -76,16 +63,8 @@
                 height: 23px;
                 border-radius: 50%; 
                 background: #fff;
-                border: 2px solid #cfcfcf;
+                border: 3px solid #1890ff;
                 cursor: pointer;
-            }
-
-            .rangeSlider.active::-webkit-slider-thumb {
-                width: 30px;
-                height: 30px;
-                background: #f5f5f5;                
-                border: 2px solid #c9c9c9; 
-                box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
             }
 
             .rangeSlider::-moz-range-thumb {
@@ -93,16 +72,8 @@
                 height: 23px;
                 border-radius: 50%;
                 background: #fff;
-                border: 2px solid #cfcfcf;
+                border: 3px solid #1890ff;
                 cursor: pointer;
-            }
-
-            .rangeSlider.active::-moz-slider-thumb {
-                width: 30px;
-                height: 30px;
-                background: #f5f5f5;                
-                border: 2px solid #c9c9c9; 
-                box-shadow: -2px 2px 3px rgba(0, 0, 0, 0.2);
             }
         </style>
     </#if>
